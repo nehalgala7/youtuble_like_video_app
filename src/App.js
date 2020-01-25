@@ -35,7 +35,7 @@ class App extends Component {
           </Grid>
           <Grid item xs={11}>
             {this.state.videos ? <Grid container spacing={10}>
-              <Grid item xs={8}>
+              <Grid item xs={8} style={{ padding: "10px 40px 40px 40px" }}>
                 <VideoDetail video={this.state.selectedVideo} />
               </Grid>
               <Grid item xs={4}>
