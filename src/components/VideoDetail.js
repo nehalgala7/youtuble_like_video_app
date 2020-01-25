@@ -3,8 +3,6 @@ import React from "react";
 import { Paper, Typography } from "@material-ui/core";
 
 export default ({ video }) => {
-  if (!video) return <div>Loading...</div>;
-
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
   return (
