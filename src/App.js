@@ -23,21 +23,23 @@ class App extends Component {
       console.log(process.env, 'process.env');
       return (
         <Grid style={{ justifyContent: "center" }} container spacing={10}>
-        <Grid item xs={11}>
-          <Grid container spacing={10}>
-            <Grid item xs={12}>
-              <SearchBar onSubmit={handleSubmit.bind(this)} />
+          <Grid item xs={11}>
+            <Grid container spacing={10}>
+              <Grid item xs={12}>
+                <SearchBar onSubmit={handleSubmit.bind(this)} />
+              </Grid>
             </Grid>
-            {this.state.videos ? [
+          </Grid>
+          <Grid item xs={11}>
+            {this.state.videos ? <Grid container spacing={10}>
               <Grid item xs={8}>
                 <VideoDetail video={this.state.selectedVideo} />
-              </Grid>,
+              </Grid>
               <Grid item xs={4}>
                 <VideoList videos={this.state.videos} onVideoSelect={this.onVideoSelect} />
-              </Grid>] 
-            : null}
+              </Grid>
+            </Grid> : null }
           </Grid>
-        </Grid>
       </Grid>
     );
   }
