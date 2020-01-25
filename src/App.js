@@ -13,9 +13,12 @@ class App extends Component {
   };
 
   onVideoSelect = (video) => {
-    this.setState({
-      selectedVideo: video
-    });
+    console.log(video)
+    handleSubmit.call(this, "", video);
+
+    // this.setState({
+    //   selectedVideo: video
+    // });
   }
 
   
@@ -47,13 +50,16 @@ class App extends Component {
 
 export default App;
 
-async function handleSubmit(searchTerm) {
+async function handleSubmit(searchTerm, relatedToVideoId) {
+  console.log(relatedToVideoId, searchTerm, "relatedToVideoId");
   const { data: { items: videos } } = await youtube.get("search", {
     params: {
       part: "snippet",
       maxResults: 5,
       key: process.env.REACT_APP_API_KEY,
       q: searchTerm,
+      relatedToVideoId: relatedToVideoId,
+      type:"video"
     }
   });
 
