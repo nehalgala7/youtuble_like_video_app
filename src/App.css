@@ -1,0 +1,23 @@
+.main-container {
+    justify-content: center;
+    padding: 20px;
+}
+
+.main-container .app-content {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+
+.main-container .app-content .video-detail-view {
+    display: inline-block;
+    width: 70%;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.main-container .app-content .related-video-view {
+    width: 30%;
+    display: inline-block;
+    box-sizing: border-box;
+}

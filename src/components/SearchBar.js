@@ -1,26 +1,36 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import "./SearchBar.css";
 
-export default (props) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const handleChange = (event) => setSearchTerm(event.target.value);
-
-  const onKeyPress = (event) => {
-    if (event.key === "Enter") {
-      props.onSubmit(searchTerm);
+class SearchBar extends Component {
+    state = {
+      searchTerm: ""
     }
-  }
 
-  return (
-    <div className="search-bar-container">
-      <input 
-        className="search-bar"
-        label="Search..."
-        value={searchTerm}
-        onChange={handleChange}
-        onKeyPress={onKeyPress}
-      />
-    </div>
-  );
+    handleChange = (event) => {
+      this.setState({
+        searchTerm: event.target.value
+      });
+    }
+
+    onKeyPress = (event) => {
+      if (event.key === "Enter") {
+        this.props.onSubmit(this.state.searchTerm);
+      }
+    }
+
+    render() {
+      return (
+        <div className="search-bar-container">
+          <input 
+            className="search-bar"
+            placeholder="Search..."
+            value={this.state.searchTerm}
+            onChange={this.handleChange}
+            onKeyPress={this.onKeyPress}
+          />
+        </div>
+      );
+    }
 }
+
+export default SearchBar;

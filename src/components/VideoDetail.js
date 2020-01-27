@@ -1,13 +1,14 @@
 import React from "react";
 
 import { Paper, Typography } from "@material-ui/core";
+import "./VideoDetail.css"
 
 export default ({ video }) => {
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 
   return (
     <React.Fragment>
-      <Paper elevation={6} style={{ height: "70%" }}>
+      <div className="detail-video">
         <iframe
           frameBorder="0"
           height="100%"
@@ -15,7 +16,7 @@ export default ({ video }) => {
           title="Video Player"
           src={videoSrc}
         />
-      </Paper>
+      </div>
       <Paper elevation={6} style={{ padding: "15px" }}>
         <Typography variant="h4">
           {video.snippet.title} - {video.snippet.channelTitle}
