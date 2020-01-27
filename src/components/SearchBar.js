@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SearchBar.css";
+import { Link } from "react-router-dom";
 
 class SearchBar extends Component {
     state = {
@@ -12,11 +13,11 @@ class SearchBar extends Component {
       });
     }
 
-    onKeyPress = (event) => {
-      if (event.key === "Enter") {
-        this.props.onSubmit(this.state.searchTerm);
-      }
-    }
+    // onKeyPress = (event) => {
+    //   if (event.key === "Enter") {
+    //     this.props.onSubmit(this.state.searchTerm);
+    //   }
+    // }
 
     render() {
       return (
@@ -28,6 +29,7 @@ class SearchBar extends Component {
             onChange={this.handleChange}
             onKeyPress={this.onKeyPress}
           />
+          <Link to={"/result?query=" + this.state.searchTerm}><button>Search</button></Link>
         </div>
       );
     }

@@ -4,7 +4,6 @@ import VideoItem from "./VideoItem";
 
 function VideoList(props) {
   let videos = props.videos;
-
   const listOfVideos = videos.map((video, index) => (
     <VideoItem
       onVideoSelect={props.onVideoSelect}
@@ -14,7 +13,7 @@ function VideoList(props) {
   ));
 
   return (
-    <div container spacing={10}>
+    <div spacing={10}>
       {listOfVideos}
     </div>
   );

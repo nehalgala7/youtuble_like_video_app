@@ -1,0 +1,13 @@
+.main-container .video-detail-view {
+    display: inline-block;
+    width: 70%;
+    box-sizing: border-box;
+    vertical-align: top;
+    margin-right: 30px;
+}
+
+.main-container .related-video-view {
+    width: calc(30% - 30px);
+    display: inline-block;
+    box-sizing: border-box;
+}
